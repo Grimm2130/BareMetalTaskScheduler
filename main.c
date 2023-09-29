@@ -19,7 +19,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "main.h"
-#include "led.h"
+#include "Led.h"
 
 // Configuration Functions
 
@@ -27,7 +27,7 @@ void Init_Systick_Timer();
 void Init_Tasks();
 void Init_Tasks_Stacks();
 __attribute__((naked)) void Change_To_Psp();
-__attribute__((naked)) void Init_Scheduler_Stack();
+__attribute__((naked)) void Init_Scheduler_Stack(uint32_t volatile scheduler_stack_top);
 
 // Task Handler
 void Task_Handler_1(void);
@@ -216,7 +216,7 @@ __attribute__((naked)) void Change_To_Psp(){
  */
 __attribute__((naked)) void Init_Scheduler_Stack( uint32_t volatile scheduler_stack_top ){
 	// Move the Scheduler stack to the MSP
-	__asm volatile("MSR MSP, R0");
+	__asm volatile("MSR MSP, R0");		// param {scheduler_stack_top} retrieved from R0
 	// branch back to the LR destination
 	__asm volatile("BX LR");
 }
