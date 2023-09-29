@@ -15,4 +15,4 @@ startupFile.o:startupFile.c
 	${CC} ${CFLAGS} $^ -o $@
 
 clean:
-	rm *.o 
+	rm *.o *log log*

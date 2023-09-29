@@ -113,7 +113,7 @@ uint32_t Vectors[] __attribute__((section(".isr_vectors"))) = {
     0,
     0,
     0,
-    0
+    0,
     (uint32_t)SVC_Handler,
     (uint32_t)DebugMon_Handler,
     0,
