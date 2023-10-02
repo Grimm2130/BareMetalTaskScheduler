@@ -4,6 +4,7 @@
  *  Created on: Sep 11, 2023
  *      Author: chimaochiagha
  */
+#include <stdint.h>
 
 #ifndef MAIN_H_
 #define MAIN_H_
