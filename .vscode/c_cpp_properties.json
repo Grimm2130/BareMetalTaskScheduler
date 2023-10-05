@@ -6,7 +6,7 @@
         "${workspaceFolder}/**"
       ],
       "compilerPath": "/opt/homebrew/bin/arm-none-eabi-gcc",
-      "cStandard": "c99",
+      "cStandard": "${default}",
       "cppStandard": "c++11",
       "intelliSenseMode": "macos-gcc-arm64",
       "compilerArgs": [

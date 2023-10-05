@@ -39,7 +39,7 @@ void Idle_Task(void);
 // Global variables
 static uint32_t sys_ticks;
 static uint8_t volatile CurrentTaskId;
-Task_t tasks[ MAX_NUM_TASKS ];					// Array of tasks
+static Task_t tasks[ MAX_NUM_TASKS ];					// Array of tasks
 
 void SetCurrentStackPtr(uint32_t stackAddr);
 uint32_t GetCurrentStackPtr();
@@ -54,7 +54,7 @@ int main(){
 	EN_FAULTS();
 	// Enable LEDs
 	LED_Setup();
-	printf("Enabling fault handlers\n");
+	// printf("Enabling fault handlers\n");
 	// Set the MSP stack for the Systick
 	Init_Scheduler_Stack((uint32_t volatile) SCHEDULER_STACK_START);
 	// Instantiate tasks
@@ -224,7 +224,7 @@ __attribute__((naked)) void Init_Scheduler_Stack( uint32_t volatile scheduler_st
 
 void Task_Handler_1(void){
 	while(1){
-		printf("%ld | In task 1\n", sys_ticks);
+		// printf("%ld | In task 1\n", sys_ticks);
 		DELAY_MS(1000);
 	}
 }
@@ -232,27 +232,27 @@ void Task_Handler_1(void){
 
 void Task_Handler_2(void){
 	while(1){
-		printf("%ld | In task 2\n", sys_ticks);
+		// printf("%ld | In task 2\n", sys_ticks);
 		DELAY_MS(100);
 	}
 }
 void Task_Handler_3(void){
 	while(1){
-		printf("%ld | In task 3\n", sys_ticks);
+		// printf("%ld | In task 3\n", sys_ticks);
 		DELAY_MS(5);
 	}
 }
 
 void Task_Handler_4(void){
 	while(1){
-		printf("%ld | In task 4\n", sys_ticks);
+		// printf("%ld | In task 4\n", sys_ticks);
 		DELAY_MS(4);
 	}
 }
 
 
 void Idle_Task(void){
-	while(1){ printf("Idle task\n"); }
+	while(1){ /*printf("Idle task\n");*/ }
 }
 
 void SysTick_Handler(void){
@@ -288,19 +288,19 @@ __attribute__((naked)) void PendSV_Handler(){
 //2. implement the fault handlers
 void HardFault_Handler(void)
 {
-	printf("Exception : Hardfault\n");
+	// printf("Exception : Hardfault\n");
 	while(1);
 }
 
 
 void MemManage_Handler(void)
 {
-	printf("Exception : MemManage\n");
+	// printf("Exception : MemManage\n");
 	while(1);
 }
 
 void BusFault_Handler(void)
 {
-	printf("Exception : BusFault\n");
+	// printf("Exception : BusFault\n");
 	while(1);
 }

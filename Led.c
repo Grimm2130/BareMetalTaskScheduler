@@ -14,7 +14,6 @@
 #define 	LED_3		14U
 #define 	LED_4		15U
 
-
 void LED_Setup(){
 	AHB1_BUS_EN_GPIOD();
 	// Set Mode of the LEDs to output
@@ -28,7 +27,7 @@ void LED_Setup(){
 
 void ToggleLed1(){
 	while( 1 ){
-		printf("Toggling Led 1\n");
+		// printf("Toggling Led 1\n");
 		LED_ON( LED_1 );
 		DELAY_MS(250);
 		LED_OFF( LED_1 );
@@ -38,7 +37,7 @@ void ToggleLed1(){
 
 void ToggleLed2(){
 	while( 1 ){
-		printf("Toggling Led 2\n");
+		// printf("Toggling Led 2\n");
 		LED_ON( LED_2 );
 		DELAY_MS(1000);
 		LED_OFF( LED_2 );
@@ -48,7 +47,7 @@ void ToggleLed2(){
 
 void ToggleLed3(){
 	while( 1 ){
-		printf("Toggling Led 3\n");
+		// printf("Toggling Led 3\n");
 		LED_ON( LED_3 );
 		DELAY_MS(500);
 		LED_OFF( LED_3 );
@@ -58,7 +57,7 @@ void ToggleLed3(){
 
 void ToggleLed4(){
 	while( 1 ){
-		printf("Toggling Led 4\n");
+		// printf("Toggling Led 4\n");
 		LED_ON( LED_4 );
 		DELAY_MS(750);
 		LED_OFF( LED_4 );

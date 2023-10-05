@@ -9,7 +9,7 @@
   "C_Cpp_Runner.warnings": [
     "-Wall"
   ],
-  "C_Cpp_Runner.msvcWarnings": [ ],
+  "C_Cpp_Runner.msvcWarnings": [],
   "C_Cpp_Runner.enableWarnings": false,
   "C_Cpp_Runner.warningsAsError": false,
   "C_Cpp_Runner.compilerArgs": [],
@@ -31,5 +31,6 @@
   "C_Cpp_Runner.useUndefinedSanitizer": false,
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
-  "C_Cpp_Runner.useLinkTimeOptimization": false
+  "C_Cpp_Runner.useLinkTimeOptimization": false,
+  "C_Cpp_Runner.msvcSecureNoWarnings": false
 }
